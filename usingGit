@@ -18,3 +18,9 @@ $ git remote add origin "our address from github"  -> to setup account or origin
 & git push -u origin master  -> to push to github, to upload,
 
 The username and password will be asked
+
+Now the files are uploaded to git
+
+when we changed a file and need to upload to git,
+Then ,we need to add the file again and need to commit , then need to push
+
