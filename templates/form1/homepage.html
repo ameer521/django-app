@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1><center><u>POSTS</u></center></h1>
+{% for i in post %}
+    <a href="/detailview2/{{ i.id }}">{{  i.title }}</a>:{{ i.author }} <!-- here, href points to "detailview2" in view and also the id passed , so it will show corresponding content-->
+    </br>
+{% endfor %}
+
+<br>
+<br>
+<br>
+{% for i in post %}
+    <a href = {% url "details2" id=i.id%}>{{ i.title }}</a>
+    <br>
+{% endfor %}
+
+
+
+
+
+<!-- This is for CustomTemplateView  -->
+{% for i in name %} {{ i.age }}
+{% endfor %}
+
+
+
+
+
+
+
+</body>
+</html>

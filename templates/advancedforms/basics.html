@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1><center><u><b>{{ title }}</b></u></center></h1>
+
+<form method="GET" action="https://www.google.com">   <!-- here, we created form with GET method which will request resource. The action means what actually need to done , Here, redirect to google -->
+    <input type="text" name="q"  placeholder="search"><br>   <!-- The placeholder will highlight the content (" Search ", here) in textBox. if we give " name= q " , then it will act as query -->
+
+    <input type="submit" value="Search">
+
+</form>
+
+<!--Here, when the Submit clicked, the value in the textbox will fetched and redirects to google with that keyword.
+if we gives " name = q " to many textboxes , then all values will be fetched and combines , then passed to google. -->
+
+
+
+</body>
+</html>

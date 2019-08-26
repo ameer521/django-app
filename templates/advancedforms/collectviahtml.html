@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<form method="POST" action="">{% csrf_token %}    <!-- Here, along with form , we set csrf_token for security , because ,we sets method as POST. if csrf_token not given ,it will not work -->
+    <input type="text"  name="searching" placeholder="keyword">
+    <input type="submit" value="Search">
+</form>
+
+
+</body>
+</html>

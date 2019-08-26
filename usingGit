@@ -1,0 +1,14 @@
+
+
+
+
+
+$ git init    -> for creating or initialising git repository
+
+$ git status  -> for showing status , to check which files are added to Git or not
+
+$ git .   -> for adding all files in the directory to git
+
+
+
+$ git commit -m "First Commit" ->  for making commit, the -m is for message
