@@ -7,8 +7,14 @@ $ git init    -> for creating or initialising git repository
 
 $ git status  -> for showing status , to check which files are added to Git or not
 
-$ git .   -> for adding all files in the directory to git
+$ git add .   -> for adding all files in the directory to git
 
-
+$ git add ./path/path   -> we can also add files as por wish by selecting it by specifying path
 
 $ git commit -m "First Commit" ->  for making commit, the -m is for message
+
+$ git remote add origin "our address from github"  -> to setup account or origin adding
+
+& git push -u origin master  -> to push to github, to upload,
+
+The username and password will be asked
