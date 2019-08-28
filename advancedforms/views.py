@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 from .forms import *
 
+from django.core.files.storage import FileSystemStorage
+
 # Create your views here.
 
 
@@ -113,12 +115,44 @@ def Model_Form(request):
 
 
 
+################################################ IMAGE UPLOAD VIA HTML ##########################
+
+# don't forget to set Media url and root in settings
+
+def image_upload_via_html(request):
+
+    if request.method == "POST":
+        file = request.FILES["file"]     # here, the image fetched  BY specifying the name in html form.
+        print(file.name)
+        name = file.name  # The name of the fetched file (image) stored
+        print(file.size)  # for the size of the file
+        fs = FileSystemStorage()  # the FileSystemStorage() imported above and assigned to fs, for storing
+        print(fs)
+
+        fs.save(name,file)   # the file saved , the syntax is the name and original file passed as argument
+
+
+    return render(request,'advancedforms/imageupload.html')
 
 
 
 
+##################################### FILE UPLOAD VIA DJANGO MODEL FORM ##############################
 
 
+
+def file_upload_model_form(request):
+
+    form = FormModelform(request.POST or None, request.FILES)
+
+    if form.is_valid():
+        form.save()
+        print("saved")
+
+
+
+
+    return render(request,'advancedforms/file_upload_via_modelform.html',{"form":form})
 
 
 

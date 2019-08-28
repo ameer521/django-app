@@ -1,6 +1,8 @@
 from django.urls import path
 
 from .views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
 
@@ -12,8 +14,7 @@ urlpatterns = [
     path('initial/',inital_or_default_value_setting,name="defaultvaluesetting"),
     path('widget/',widgets_example,name="widgetexample"),
     path('modelform/',Model_Form,name="ModelForm"),
+    path('fileupload/',image_upload_via_html,name="fileupload"),
+    path('viamodelform/',file_upload_model_form,name='viamodelform'),
 
-
-
-
-]
+] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

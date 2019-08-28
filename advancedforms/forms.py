@@ -99,7 +99,7 @@ class forwidget(forms.Form):
 class FormModelform(forms.ModelForm):    #imported The ModelForm
     class Meta:
         model = Formmodel  # model selected
-        fields = ["n","age","address"]   # we selected the field to show in form
+        fields = ["n","age","address","stat","file"]   # we selected the field to show in form
 
 
         #exclude= ["post"]  # if we uses exclude , all other fields except fields in the exclude will be shown in form.
@@ -113,3 +113,9 @@ class FormModelform(forms.ModelForm):    #imported The ModelForm
             raise forms.ValidationError("The name should be more than 6 letters")
         return text
 
+
+
+
+######################### OVER RIDING SAVE METHOD OF MODEL FORM ###############################
+
+    def save(self):
