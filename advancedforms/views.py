@@ -155,6 +155,53 @@ def file_upload_model_form(request):
     return render(request,'advancedforms/file_upload_via_modelform.html',{"form":form})
 
 
+############################## ADJUSTING MODEL FROM DATA IN VIEW  ######################################3
+
+
+def adjusting_model_form_data_in_view(request):
+    form = FormModelform(request.POST or None)
+
+
+    if form.is_valid():
+       obj = form.save(commit=False)  # here, the commit is set as false , so , it will not save
+       obj.n = "changed by view"  # here, the field "n " changed to " changed by view " , so , it will save instead of the content given in form.
+       obj.save()
+
+    return render(request,"advancedforms/modelform.html",{"form":form})
+
+
+
+
+
+
+def custom_error_messages(request):
+
+    form = Customerrrormessage(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+
+    return render(request,"advancedforms/modelform.html",{"form":form})
+
+
+
+
+
+
+
+def rendering_formerror_in_view(request):
+
+    form = Customerrrormessage(request.POST or None)
+
+
+    if form.has_error:
+        print()
+
+    if form.is_valid():
+        form.save()
+
+    return render(request,"advancedforms/modelform.html",{"form":form})
+
 
 
 

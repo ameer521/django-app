@@ -97,6 +97,7 @@ class forwidget(forms.Form):
 
 
 class FormModelform(forms.ModelForm):    #imported The ModelForm
+
     class Meta:
         model = Formmodel  # model selected
         fields = ["n","age","address","stat","file"]   # we selected the field to show in form
@@ -118,4 +119,41 @@ class FormModelform(forms.ModelForm):    #imported The ModelForm
 
 ######################### OVER RIDING SAVE METHOD OF MODEL FORM ###############################
 
-    def save(self):
+ #   def save(self,commit=True,*args,**kwargs):
+  #      obj =super(Formmodel, self).save(commit=False,*args,**kwargs)  # now ,we set commit as False, so the it will not save before we save
+
+#        obj.content = "Coming Soon"    # so , we can include our own fields before save
+ #       if commit:    #
+  #          obj.save() # when ,commit, it will save
+   #     return obj
+
+
+
+###################################FORM FOR CUSTOM ERROR MESSASGES #####################################
+
+class Customerrrormessage(forms.ModelForm):
+
+    class Meta:
+        model = Formmodel
+        fields = ["n","age","address"]
+
+        labels={
+            "n":"Name Field",   # we can change label name of field here too
+            "age":"Age field",
+        }
+
+        help_texts = {
+            "n": "For name",     # we can set help text here
+            "age":"For Age",
+        }
+
+        error_messages = {
+            "n" : {
+                "required":"Please Enter the Name",
+                "unique":"Name already exist"},                    # here, error message for each field given,look structure
+
+
+            "age":{
+                "required":"please enter the age",
+            }
+        }

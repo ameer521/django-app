@@ -16,5 +16,7 @@ urlpatterns = [
     path('modelform/',Model_Form,name="ModelForm"),
     path('fileupload/',image_upload_via_html,name="fileupload"),
     path('viamodelform/',file_upload_model_form,name='viamodelform'),
+    path('adjustdatainview/',adjusting_model_form_data_in_view,name="adjustinginview"),
+    path('customerrormessage/',custom_error_messages,name="customerrormessages"),
 
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
