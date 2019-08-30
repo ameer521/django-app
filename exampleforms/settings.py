@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'form1',
     'form2',
     'advancedforms',
+    'foreignkeys',
 ]
 
 MIDDLEWARE = [
@@ -128,7 +129,7 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'/media/pics')
+MEDIA_ROOT = os.path.join(BASE_DIR, '/media/pics')
 
 
 

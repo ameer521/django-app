@@ -25,5 +25,6 @@ urlpatterns = [
     path('',include('form1.urls')),
     path('form2/',include('form2.urls')),
     path('forms/',include('advancedforms.urls')),
+    #path("foreignkeys/",include("foreignkeys.urls")),
 
 ] # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -150,7 +150,8 @@ class Customerrrormessage(forms.ModelForm):
         error_messages = {
             "n" : {
                 "required":"Please Enter the Name",
-                "unique":"Name already exist"},                    # here, error message for each field given,look structure
+                "unique":"Name already exist"
+            },                    # here, error message for each field given,look structure
 
 
             "age":{

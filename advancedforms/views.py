@@ -195,7 +195,7 @@ def rendering_formerror_in_view(request):
 
 
     if form.has_error:
-        print()
+        print("error ")
 
     if form.is_valid():
         form.save()
